@@ -1,7 +1,7 @@
 import csv
 import re  # Import the regular expression module
 import argparse
-import pyfiglet # Import module for startup banner
+import pyfiglet  # Import module for startup banner
 from reportlab.lib.pagesizes import letter, landscape
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
 from reportlab.lib.styles import getSampleStyleSheet

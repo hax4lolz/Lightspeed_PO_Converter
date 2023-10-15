@@ -8,19 +8,18 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install require
 
 ```bash
 pip install reportlab
+pip install pyfiglet
 ```
 
 ## Usage
 
 ```python
-python3 main.py
+python main.py --input-csv "file-path.csv"
 ```
 
 
 ## Roadmap
-- Create program that takes a known .csv file and outputs a template .pdf
-- Allow user to input the path of the .csv file 
-- Turn into a standalone windows program that runs in a window.
+- Turn into a standalone windows program that runs in a window where the user can select which file to convert.
 
 ## Contributing
 
