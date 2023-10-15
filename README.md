@@ -1,6 +1,7 @@
 # Halcyon PO Converter 
 
-Analysis Sticker is a program to be run within a scuba fill station to track and print breathing air analysis stickers for labeling scuba cylinders. 
+This program is intended to take a purchase order exported from LightSpeed POS and convert it into the correct format 
+to send to Halcyon, a vendor of Extreme-Exposure.
 
 ## Requirements
 
