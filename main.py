@@ -1,11 +1,12 @@
-import csv
-import re  # Import the regular expression module
 import argparse
+import csv
 import pyfiglet  # Import module for startup banner
-from reportlab.lib.pagesizes import letter, landscape
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
-from reportlab.lib.styles import getSampleStyleSheet
+import re  # Import the regular expression module
 from reportlab.lib import colors
+from reportlab.lib.pagesizes import letter, landscape
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+
 import address
 
 
