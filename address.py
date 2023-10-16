@@ -27,6 +27,13 @@ def print_address(name, address_book):
         print("Address not found in the address book.")
 
 
+def return_address(name, address_book):
+    if name in address_book:
+        person_info = address_book[name]
+
+        return person_info
+
+
 def add_address(name, full_name, street_address, city, phone_number, dealer_number, address_book, filename):
     address_book[name] = {
         "full_name": full_name,
@@ -91,5 +98,5 @@ def main():
             print("Invalid choice. Please choose a valid option.")
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#    main()

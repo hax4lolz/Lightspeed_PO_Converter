@@ -27,7 +27,7 @@ def read_csv(file_path):
 
 
 # Function to generate a PDF with header and CSV data
-def create_pdf(output_pdf_path, csv_data):
+def create_pdf(output_pdf_path, csv_data, vendor):
     print("\nGenerating PDF")
     doc = SimpleDocTemplate(output_pdf_path, pagesize=landscape(letter))
     styles = getSampleStyleSheet()
@@ -44,19 +44,18 @@ def create_pdf(output_pdf_path, csv_data):
     # Create a list of flowable elements for the PDF
     elements = []
 
-    vendor_address = """
+    vendor_address = f"""
         Vendor Information <br />
-        Halcyon Manufacturing <br />
-        24587 NW 178th Place <br />
-        High Springs, FL 32643 <br />
-        386.454.0811 <br />
-        386.454.0815
+        {vendor['full_name']} <br />
+        {vendor['street_address']} <br />
+        {vendor['city']} <br />
+        {vendor['phone_number']} <br />
     """
 
-    dealer_address = """
+    dealer_address = f"""
         Dealer Information <br />
         Extreme Exposure <br />
-        Dealer Number 1158 <br />
+        Dealer Number {vendor['dealer_number']} <br />
         18481 High Spring Main Street <br />
         High Springs, FL 32643 <br />
         386.454.8158
@@ -120,11 +119,18 @@ def main():
 
     output_pdf_file = 'order.pdf'  # Replace with the desired output PDF file
     input_csv_file = args.input_csv
-    vendor_address = args.vendor
+    vendor = args.vendor
 
-    csv_data = read_csv(input_csv_file)
-    create_pdf(output_pdf_file, csv_data)
-    print("\nComplete. PDF file saved to: " + output_pdf_file)
+    address_book = address.load_address_book("address.json")
+    vendor_address = address.return_address(vendor, address_book)
+
+    if address_book:
+        csv_data = read_csv(input_csv_file)
+        create_pdf(output_pdf_file, csv_data, vendor_address)
+        print("\nComplete. PDF file saved to: " + output_pdf_file)
+
+    else:
+        print('Address not found.')
 
 
 if __name__ == '__main__':
