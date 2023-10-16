@@ -6,6 +6,7 @@ from reportlab.lib.pagesizes import letter, landscape
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib import colors
+import address
 
 
 # Function to strip HTML tags from a string
@@ -31,7 +32,7 @@ def create_pdf(output_pdf_path, csv_data):
     styles = getSampleStyleSheet()
 
     # Define which columns need special handling e.g. removed or adjusted
-    columns_to_exclude = [0, 3, 5, 6, 8, 10, 11]  # Example: Remove columns 2 and 4
+    columns_to_exclude = [0, 3, 5, 6, 8, 12, 11]  # Example: Remove columns 2 and 4
 
     # Modify the CSV data by excluding specified columns
     modified_data = []
@@ -108,17 +109,17 @@ def main():
     print(ascii_banner)
 
     # Code starts
-    output_pdf_file = 'order.pdf'  # Replace with the desired output PDF file
-
     parser = argparse.ArgumentParser(description='''
     
     A Simple Python script to take a PO output from Lightspeed and convert it to a PDF for Halcyon.
     ''')
     parser.add_argument("--input-csv", required=True, help='Path to the input CSV file. Ex. --input-csv "file.csv"')
+    parser.add_argument("--vendor", required=True, help='Vendor name for PO. Must match address book. Ex. --vendor "Halcyon"')
     args = parser.parse_args()
 
+    output_pdf_file = 'order.pdf'  # Replace with the desired output PDF file
     input_csv_file = args.input_csv
-    # output_pdf_file = args.output_pdf
+    vendor_address = args.vendor
 
     csv_data = read_csv(input_csv_file)
     create_pdf(output_pdf_file, csv_data)

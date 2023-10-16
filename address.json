@@ -1,0 +1,23 @@
+{
+    "Halcyon": {
+        "full_name": "Halcyon Manufacturing",
+        "street_address": "24587 NW 178th Place",
+        "city": "High Springs, FL 32643",
+        "phone_number": "386.454.0811",
+        "dealer_number": "1158"
+    },
+    "Scubapro": {
+        "full_name": "Johnson Outdoors",
+        "street_address": "1166-A Fesler Street",
+        "city": "El Cajon, CA 92020",
+        "phone_number": "619.402.1023",
+        "dealer_number": "Kyle Harmon"
+    },
+    "EE": {
+        "full_name": "Extreme-Exposure",
+        "street_address": "18481 High Springs Main Street",
+        "city": "High Springs, FL 32643",
+        "phone_number": "386.454.8158",
+        "dealer_number": "Kyle Harmon"
+    }
+}
