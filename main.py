@@ -105,7 +105,7 @@ def create_pdf(output_pdf_path, csv_data, vendor):
 
 def main():
     # Startup banner
-    ascii_banner = pyfiglet.figlet_format("Halcyon PO Generator")
+    ascii_banner = pyfiglet.figlet_format("Lightspeed PO Generator")
     print(ascii_banner)
 
     # Code starts
